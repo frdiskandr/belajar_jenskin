@@ -19,6 +19,14 @@ const server = http.createServer((request, response) => {
     });
     return;
   }
+  if (request.url === "/hc") {
+    sendJson(response, 200, {
+      status: "ok",
+      service: "ok",
+      time: new Date().toISOString(),
+    });
+    return;
+  }
 
   sendJson(response, 200, {
     message: "Halo dari Node.js!",
