@@ -1,0 +1,17 @@
+{
+  "name": "belajar-jenskins",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proyek demo Node.js untuk belajar CI/CD dengan Jenkins",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "verify": "node --check src/server.js && node --check scripts/build.js && node --check scripts/smoke.js",
+    "build": "node scripts/build.js",
+    "smoke": "node scripts/smoke.js",
+    "ci": "npm run verify && npm run build && npm run smoke"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
