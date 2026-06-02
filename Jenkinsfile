@@ -1,10 +1,8 @@
 pipeline {
   agent any
-
   tools {
     nodejs: 'node24'
   }
-
   options {
     timestamps()
   }
@@ -18,7 +16,7 @@ pipeline {
 
     stage('Install') {
       steps {
-        sh 'npm ci'
+        sh 'npm i'
       }
     }
 
