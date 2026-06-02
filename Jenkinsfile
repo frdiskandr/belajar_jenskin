@@ -1,8 +1,8 @@
 pipeline {
   agent any
   tools {
-    nodejs: 'node24'
-  }
+        nodejs 'node24'
+    }
   options {
     timestamps()
   }
@@ -10,8 +10,9 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        checkout scm
-      }
+                git branch: 'main',
+                url: 'https://github.com/frdiskandr/belajar_jenskin.git'
+            }
     }
 
     stage('Install') {
